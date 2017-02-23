@@ -3,4 +3,25 @@
     height: 600px;
     border:1px solid #00f;
     margin:50px auto;
+    position: relative;
+}
+#menujuego{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #000;
+    background-image: url('./../img/fondomenu.jpg');
+    width: 800px;
+    height: 600px;
+}
+#menujuego .opcion{
+    border:5px solid #fff;
+    color:#fff;
+    font-size: 2em;
+    padding: 10px;
+    margin: 15px auto;
+    cursor: pointer;
+    max-width: 60%;
+    border-radius:10px;
 }
