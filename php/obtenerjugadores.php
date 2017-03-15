@@ -12,6 +12,7 @@ if ($resultados->numColumns()) { // returns column count, here being used as tru
     $pos = count($aJugadores);
     $aJugadores[$pos]['nombre'] = $fila['nombre'];
     $aJugadores[$pos]['posicion'] = $fila['posx'];
+    $aJugadores[$pos]['coche'] = $pos;
   }
 }
 

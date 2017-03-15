@@ -12,7 +12,7 @@
             
         </script>
         <script type="text/javascript" src="./lib/menu.js" ></script>
-        <script type="text/javascript" src="./lib/juego.js" ></script>
+        <?php include('includes/juegojs.php'); ?>
     </head>
     <body> 
             <div id="juego">

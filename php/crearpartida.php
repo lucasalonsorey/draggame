@@ -32,6 +32,7 @@ $tblJugadoresGrabar->bindValue(':clave',$clave);
 $tblJugadoresGrabar->bindValue(':idj',$idjugador);
 $fuecorrecto = $tblJugadoresGrabar->execute();
 $_SESSION['jugador'] = $idjugador;
+$_SESSION['coche'] = 0;
 $_SESSION['clave'] = $clave;
 if($fuecorrecto){
     echo "1-".$clave;

@@ -1,4 +1,6 @@
-$(document).ready(function(){
+<?php session_start(); ?>
+<script type="text/javascript">
+    $(document).ready(function(){
     lienzo = document.getElementById("lienzo");
     contexto = lienzo.getContext("2d");
     personajes[0] = new Personaje();
@@ -6,6 +8,7 @@ $(document).ready(function(){
     personajes[0].setImage(cochemiguel[1]);
     personajes[1].setImage(cochepedro[1]);
     
+    yo = new Personaje();
 })
 
 $(document).keydown(function(e){
@@ -13,14 +16,14 @@ $(document).keydown(function(e){
     
     //ACELERAR PERSONAJE
     if(e.which == 39){ 
-        personajes[0].setMovimientoPersonaje('acelerar');        
+        yo.setMovimientoPersonaje('acelerar');        
         
-        personajes[0].mover();
+        yo.mover();
         //ACTUALIZAMOS BASE DE DATOS CON LA POSICION DEL COCHE
         $.ajax({
             method: "POST",
             url: "php/actualizarposicion.php",
-            data: { posx: personajes[0].getPosX()}
+            data: { posx: yo.getPosX()}
         })
         .done(function(msg) {
             console.log(msg);
@@ -41,6 +44,7 @@ function loop(){
             for(var j = 0; j<json.length;j++){
                     
                     personajes[j].setPosX(json[j].posicion);
+                    
                     console.log(json[j].posicion);
                 }
         });
@@ -75,3 +79,4 @@ function loop(){
     temporizador = setTimeout("loop()",30);
 
 }
+</script>
